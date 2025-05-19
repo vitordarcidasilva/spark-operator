@@ -3,7 +3,7 @@ module github.com/kubeflow/spark-operator
 go 1.24.1
 
 require (
-	github.com/golang/glog v1.2.4
+	github.com/golang/glog v1.2.5
 	github.com/google/uuid v1.6.0
 	github.com/onsi/ginkgo/v2 v2.22.0
 	github.com/onsi/gomega v1.36.1
