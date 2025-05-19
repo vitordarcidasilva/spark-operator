@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: spark-operator
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: spark-operator
+    repoURL: https://googlecloudplatform.github.io/spark-on-k8s-operator
+    targetRevision: 1.1.27
+    helm:
+      releaseName: spark-operator
+      valueFiles:
+        - values.yaml
+      parameters:
+        - name: skip-crds
+          value: "true"
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: spark-operator
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true 
