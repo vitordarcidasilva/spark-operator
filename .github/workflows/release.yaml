@@ -159,7 +159,7 @@ jobs:
             type=semver,pattern={{version}},value=${{ env.VERSION }}
 
       - name: Download digests
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           path: /tmp/digests
           pattern: digests-*
